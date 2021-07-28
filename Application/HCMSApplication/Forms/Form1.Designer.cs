@@ -32,6 +32,7 @@ namespace HCMSApplication
             this.Login = new System.Windows.Forms.TextBox();
             this.Password = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.LogInButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Login
@@ -58,16 +59,26 @@ namespace HCMSApplication
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(199, 92);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(572, 39);
+            this.label1.Size = new System.Drawing.Size(549, 38);
             this.label1.TabIndex = 2;
             this.label1.Text = "Human Capital Management System";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // LogInButton
+            // 
+            this.LogInButton.Location = new System.Drawing.Point(377, 347);
+            this.LogInButton.Name = "LogInButton";
+            this.LogInButton.Size = new System.Drawing.Size(192, 50);
+            this.LogInButton.TabIndex = 3;
+            this.LogInButton.Text = "Log In";
+            this.LogInButton.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(971, 510);
+            this.Controls.Add(this.LogInButton);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Password);
             this.Controls.Add(this.Login);
@@ -83,6 +94,7 @@ namespace HCMSApplication
         private System.Windows.Forms.TextBox Login;
         private System.Windows.Forms.TextBox Password;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button LogInButton;
     }
 }
 
