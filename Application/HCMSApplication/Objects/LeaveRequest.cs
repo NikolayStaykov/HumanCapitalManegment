@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HCMSApplication
 {
-    class LeaveRequest
+    public class LeaveRequest
     {
         protected int ID;
         protected int EmployeeID;

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HCMSApplication
 {
-    class Position
+    public class Position
     {
         protected int ID;
         protected int DepartmentID;

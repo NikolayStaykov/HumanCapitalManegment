@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace HCMSApplication.Forms
 {
-    public partial class BrowseUsers : Form
+    public partial class NewEmployee : Form
     {
-        public BrowseUsers()
+        public NewEmployee()
         {
             InitializeComponent();
         }

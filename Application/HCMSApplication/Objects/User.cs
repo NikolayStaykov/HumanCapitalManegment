@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HCMSApplication
 {
-    class User
+    public class User
     {
         protected int ID;
         private string Username;

@@ -8,18 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace HCMSApplication
+namespace HCMSApplication.Forms
 {
-    public partial class Form1 : Form
+    public partial class EditEmployee : Form
     {
-        public Form1()
+        public EditEmployee()
         {
             InitializeComponent();
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

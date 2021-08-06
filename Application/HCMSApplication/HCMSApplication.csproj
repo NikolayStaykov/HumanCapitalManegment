@@ -46,49 +46,157 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Forms\BrowseUsers.cs">
+    <Compile Include="Forms\Browse Forms\BrowseUsersForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\BrowseUsers.Designer.cs">
-      <DependentUpon>BrowseUsers.cs</DependentUpon>
+    <Compile Include="Forms\Browse Forms\BrowseUsersForm.Designer.cs">
+      <DependentUpon>BrowseUsersForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\EditUser.cs">
+    <Compile Include="Forms\Browse Forms\BrowseLeaveRequestsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\EditUser.Designer.cs">
+    <Compile Include="Forms\Browse Forms\BrowseLeaveRequestsForm.Designer.cs">
+      <DependentUpon>BrowseLeaveRequestsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Browse Forms\BrowseDepartmentsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Browse Forms\BrowseDepartmentsForm.Designer.cs">
+      <DependentUpon>BrowseDepartmentsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Browse Forms\BrowseEmployeesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Browse Forms\BrowseEmployeesForm.Designer.cs">
+      <DependentUpon>BrowseEmployeesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Creation Forms\NewLeaveRequest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Creation Forms\NewLeaveRequest.Designer.cs">
+      <DependentUpon>NewLeaveRequest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Edit Forms\EditDepartment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Edit Forms\EditDepartment.Designer.cs">
+      <DependentUpon>EditDepartment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Edit Forms\EditEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Edit Forms\EditEmployee.Designer.cs">
+      <DependentUpon>EditEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Edit Forms\EditLeaveRequest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Edit Forms\EditLeaveRequest.Designer.cs">
+      <DependentUpon>EditLeaveRequest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Edit Forms\EditPosition.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Edit Forms\EditPosition.Designer.cs">
+      <DependentUpon>EditPosition.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Edit Forms\EditUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Edit Forms\EditUser.Designer.cs">
       <DependentUpon>EditUser.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\NewUser.cs">
+    <Compile Include="Forms\Creation Forms\NewDepartment.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\NewUser.Designer.cs">
+    <Compile Include="Forms\Creation Forms\NewDepartment.Designer.cs">
+      <DependentUpon>NewDepartment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Creation Forms\NewEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Creation Forms\NewEmployee.Designer.cs">
+      <DependentUpon>NewEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Creation Forms\NewPosition.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Creation Forms\NewPosition.Designer.cs">
+      <DependentUpon>NewPosition.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Creation Forms\NewUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Creation Forms\NewUser.Designer.cs">
       <DependentUpon>NewUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\LogInForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\LogInForm.Designer.cs">
+      <DependentUpon>LogInForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MainMenuForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MainMenuForm.Designer.cs">
+      <DependentUpon>MainMenuForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Objects\Department.cs" />
     <Compile Include="Objects\Employee.cs" />
-    <Compile Include="Forms\Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
     <Compile Include="Objects\LeaveBalance.cs" />
     <Compile Include="Objects\LeaveRequest.cs" />
     <Compile Include="Objects\Position.cs" />
     <Compile Include="Objects\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Objects\User.cs" />
-    <EmbeddedResource Include="Forms\BrowseUsers.resx">
-      <DependentUpon>BrowseUsers.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Browse Forms\BrowseUsersForm.resx">
+      <DependentUpon>BrowseUsersForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\EditUser.resx">
+    <EmbeddedResource Include="Forms\Browse Forms\BrowseLeaveRequestsForm.resx">
+      <DependentUpon>BrowseLeaveRequestsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Browse Forms\BrowseDepartmentsForm.resx">
+      <DependentUpon>BrowseDepartmentsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Browse Forms\BrowseEmployeesForm.resx">
+      <DependentUpon>BrowseEmployeesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Creation Forms\NewLeaveRequest.resx">
+      <DependentUpon>NewLeaveRequest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Edit Forms\EditDepartment.resx">
+      <DependentUpon>EditDepartment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Edit Forms\EditEmployee.resx">
+      <DependentUpon>EditEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Edit Forms\EditLeaveRequest.resx">
+      <DependentUpon>EditLeaveRequest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Edit Forms\EditPosition.resx">
+      <DependentUpon>EditPosition.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Edit Forms\EditUser.resx">
       <DependentUpon>EditUser.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Creation Forms\NewDepartment.resx">
+      <DependentUpon>NewDepartment.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\NewUser.resx">
+    <EmbeddedResource Include="Forms\Creation Forms\NewEmployee.resx">
+      <DependentUpon>NewEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Creation Forms\NewPosition.resx">
+      <DependentUpon>NewPosition.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Creation Forms\NewUser.resx">
       <DependentUpon>NewUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\LogInForm.resx">
+      <DependentUpon>LogInForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MainMenuForm.resx">
+      <DependentUpon>MainMenuForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

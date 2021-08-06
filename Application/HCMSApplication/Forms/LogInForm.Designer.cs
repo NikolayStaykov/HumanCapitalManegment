@@ -1,7 +1,7 @@
 ﻿
 namespace HCMSApplication
 {
-    partial class Form1
+    partial class LogInForm
     {
         /// <summary>
         /// Required designer variable.
@@ -29,61 +29,60 @@ namespace HCMSApplication
         /// </summary>
         private void InitializeComponent()
         {
-            this.Login = new System.Windows.Forms.TextBox();
-            this.Password = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.UserNameTextBox = new System.Windows.Forms.TextBox();
+            this.PasswordTextBox = new System.Windows.Forms.TextBox();
             this.LogInButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // Login
-            // 
-            this.Login.Location = new System.Drawing.Point(377, 185);
-            this.Login.Name = "Login";
-            this.Login.Size = new System.Drawing.Size(192, 22);
-            this.Login.TabIndex = 0;
-            this.Login.Text = "Username";
-            this.Login.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
-            // Password
-            // 
-            this.Password.Location = new System.Drawing.Point(377, 256);
-            this.Password.Name = "Password";
-            this.Password.PasswordChar = '*';
-            this.Password.Size = new System.Drawing.Size(192, 22);
-            this.Password.TabIndex = 1;
-            this.Password.Text = "Password";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(199, 92);
+            this.label1.Location = new System.Drawing.Point(276, 70);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(549, 38);
-            this.label1.TabIndex = 2;
+            this.label1.Size = new System.Drawing.Size(236, 17);
+            this.label1.TabIndex = 0;
             this.label1.Text = "Human Capital Management System";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // UserNameTextBox
+            // 
+            this.UserNameTextBox.Location = new System.Drawing.Point(305, 164);
+            this.UserNameTextBox.Name = "UserNameTextBox";
+            this.UserNameTextBox.Size = new System.Drawing.Size(174, 22);
+            this.UserNameTextBox.TabIndex = 1;
+            this.UserNameTextBox.Text = "Username";
+            // 
+            // PasswordTextBox
+            // 
+            this.PasswordTextBox.Location = new System.Drawing.Point(305, 212);
+            this.PasswordTextBox.Name = "PasswordTextBox";
+            this.PasswordTextBox.PasswordChar = '*';
+            this.PasswordTextBox.Size = new System.Drawing.Size(174, 22);
+            this.PasswordTextBox.TabIndex = 2;
+            this.PasswordTextBox.Text = "Password";
             // 
             // LogInButton
             // 
-            this.LogInButton.Location = new System.Drawing.Point(377, 347);
+            this.LogInButton.Location = new System.Drawing.Point(305, 307);
             this.LogInButton.Name = "LogInButton";
-            this.LogInButton.Size = new System.Drawing.Size(192, 50);
+            this.LogInButton.Size = new System.Drawing.Size(174, 52);
             this.LogInButton.TabIndex = 3;
             this.LogInButton.Text = "Log In";
             this.LogInButton.UseVisualStyleBackColor = true;
+            this.LogInButton.Click += new System.EventHandler(this.LogInButton_Click);
             // 
-            // Form1
+            // LogInForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(971, 510);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.LogInButton);
+            this.Controls.Add(this.PasswordTextBox);
+            this.Controls.Add(this.UserNameTextBox);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.Password);
-            this.Controls.Add(this.Login);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "LogInForm";
+            this.Text = "LogInForm";
+            this.Load += new System.EventHandler(this.LogInForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -91,10 +90,9 @@ namespace HCMSApplication
 
         #endregion
 
-        private System.Windows.Forms.TextBox Login;
-        private System.Windows.Forms.TextBox Password;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox UserNameTextBox;
+        private System.Windows.Forms.TextBox PasswordTextBox;
         private System.Windows.Forms.Button LogInButton;
     }
 }
-
