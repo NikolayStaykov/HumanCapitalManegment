@@ -43,6 +43,26 @@ namespace HCMSApplication.Forms
             ResetPassword = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
+            // DiscardChanges
+            // 
+            DiscardChanges.Location = new System.Drawing.Point(158, 173);
+            DiscardChanges.Name = "DiscardChanges";
+            DiscardChanges.Size = new System.Drawing.Size(113, 55);
+            DiscardChanges.TabIndex = 8;
+            DiscardChanges.Text = "Discard Changes";
+            DiscardChanges.UseVisualStyleBackColor = true;
+            DiscardChanges.Click += new System.EventHandler(this.DiscardChanges_Click);
+            // 
+            // ResetPassword
+            // 
+            ResetPassword.Location = new System.Drawing.Point(309, 173);
+            ResetPassword.Name = "ResetPassword";
+            ResetPassword.Size = new System.Drawing.Size(113, 55);
+            ResetPassword.TabIndex = 9;
+            ResetPassword.Text = "Reset Password";
+            ResetPassword.UseVisualStyleBackColor = true;
+            ResetPassword.Click += new System.EventHandler(this.ResetPassword_Click);
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -58,6 +78,7 @@ namespace HCMSApplication.Forms
             this.UserNameTextBox.Name = "UserNameTextBox";
             this.UserNameTextBox.Size = new System.Drawing.Size(208, 22);
             this.UserNameTextBox.TabIndex = 1;
+            this.UserNameTextBox.TextChanged += new System.EventHandler(this.UserNameTextBox_TextChanged);
             // 
             // label2
             // 
@@ -103,6 +124,7 @@ namespace HCMSApplication.Forms
             this.AdminStatus.Name = "AdminStatus";
             this.AdminStatus.Size = new System.Drawing.Size(173, 24);
             this.AdminStatus.TabIndex = 6;
+            this.AdminStatus.SelectedIndexChanged += new System.EventHandler(this.AdminStatus_SelectedIndexChanged);
             // 
             // SaveChanges
             // 
@@ -112,24 +134,7 @@ namespace HCMSApplication.Forms
             this.SaveChanges.TabIndex = 7;
             this.SaveChanges.Text = "Save Changes";
             this.SaveChanges.UseVisualStyleBackColor = true;
-            // 
-            // DiscardChanges
-            // 
-            DiscardChanges.Location = new System.Drawing.Point(158, 173);
-            DiscardChanges.Name = "DiscardChanges";
-            DiscardChanges.Size = new System.Drawing.Size(113, 55);
-            DiscardChanges.TabIndex = 8;
-            DiscardChanges.Text = "Discard Changes";
-            DiscardChanges.UseVisualStyleBackColor = true;
-            // 
-            // ResetPassword
-            // 
-            ResetPassword.Location = new System.Drawing.Point(309, 173);
-            ResetPassword.Name = "ResetPassword";
-            ResetPassword.Size = new System.Drawing.Size(113, 55);
-            ResetPassword.TabIndex = 9;
-            ResetPassword.Text = "Reset Password";
-            ResetPassword.UseVisualStyleBackColor = true;
+            this.SaveChanges.Click += new System.EventHandler(this.SaveChanges_Click);
             // 
             // EditUser
             // 
@@ -148,6 +153,7 @@ namespace HCMSApplication.Forms
             this.Controls.Add(this.label1);
             this.Name = "EditUser";
             this.Text = "EditUser";
+            this.Load += new System.EventHandler(this.EditUser_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

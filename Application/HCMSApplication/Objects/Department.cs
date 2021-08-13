@@ -8,26 +8,20 @@ namespace HCMSApplication
 {
     public class Department
     {
-        protected int ID;
-        private string DepartmentName;
+        public virtual int ID { set; get; }
+        public virtual string DepartmentName { set; get; }
 
         public Department(int id,string name)
         {
             this.DepartmentName = name;
             this.ID = id;
         }
+        public Department()
+        { }
 
-        public void SetDepartmentName(string name)
+        public override string ToString()
         {
-            this.DepartmentName = name;
-        }
-        public string GetDepartmentName()
-        {
-            return this.DepartmentName;
-        }
-        public int getID()
-        {
-            return this.ID;
+            return "Department Name: " + this.DepartmentName;
         }
     }
 }

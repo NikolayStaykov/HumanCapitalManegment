@@ -47,6 +47,7 @@ namespace HCMSApplication.Forms
             this.SaveChangesButton.TabIndex = 15;
             this.SaveChangesButton.Text = "Save Changes";
             this.SaveChangesButton.UseVisualStyleBackColor = true;
+            this.SaveChangesButton.Click += new System.EventHandler(this.SaveChangesButton_Click);
             // 
             // BackButton
             // 
@@ -56,6 +57,7 @@ namespace HCMSApplication.Forms
             this.BackButton.TabIndex = 14;
             this.BackButton.Text = "Back";
             this.BackButton.UseVisualStyleBackColor = true;
+            this.BackButton.Click += new System.EventHandler(this.BackButton_Click);
             // 
             // DescriptionTextBox
             // 
@@ -64,6 +66,7 @@ namespace HCMSApplication.Forms
             this.DescriptionTextBox.Size = new System.Drawing.Size(228, 96);
             this.DescriptionTextBox.TabIndex = 13;
             this.DescriptionTextBox.Text = "";
+            this.DescriptionTextBox.TextChanged += new System.EventHandler(this.DescriptionTextBox_TextChanged);
             // 
             // label3
             // 
@@ -80,6 +83,7 @@ namespace HCMSApplication.Forms
             this.PositionNameBox.Name = "PositionNameBox";
             this.PositionNameBox.Size = new System.Drawing.Size(262, 22);
             this.PositionNameBox.TabIndex = 11;
+            this.PositionNameBox.TextChanged += new System.EventHandler(this.PositionNameBox_TextChanged);
             // 
             // label2
             // 
@@ -122,6 +126,7 @@ namespace HCMSApplication.Forms
             this.Controls.Add(this.label1);
             this.Name = "EditPosition";
             this.Text = "EditPosition";
+            this.Load += new System.EventHandler(this.EditPosition_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

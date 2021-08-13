@@ -8,10 +8,10 @@ namespace HCMSApplication
 {
     public class Position
     {
-        protected int ID;
-        protected int DepartmentID;
-        private string Name;
-        private string Description;
+        public virtual int ID { set; get; }
+        public virtual int DepartmentID { set; get; }
+        public virtual string Name { set; get; }
+        public virtual string Description { set; get; }
         public Position(int id,int departmentID,string name,string description)
         {
             this.ID = id;
@@ -19,29 +19,11 @@ namespace HCMSApplication
             this.Name = name;
             this.Description = description;
         }
-        public int getID()
+        public Position()
+        { }
+        public override string ToString()
         {
-            return this.ID;
-        }
-        public int getDepartmentID()
-        {
-            return this.DepartmentID;
-        }
-        public void setName(string name)
-        {
-            this.Name = name;
-        }
-        public string getName()
-        {
-            return this.Name;
-        }
-        public void setDescription(string description)
-        {
-            this.Description = description;
-        }
-        public string getDescription()
-        {
-            return this.Description;
+            return "Position ID: " + this.ID + " | Name: " + this.Name + " | Description: " + this.Description;
         }
     }
 }

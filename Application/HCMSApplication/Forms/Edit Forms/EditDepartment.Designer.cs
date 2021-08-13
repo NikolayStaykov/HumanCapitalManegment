@@ -38,6 +38,7 @@ namespace HCMSApplication.Forms
             this.EditPositionButton = new System.Windows.Forms.Button();
             this.NewPositionButton = new System.Windows.Forms.Button();
             this.SaveChangesButton = new System.Windows.Forms.Button();
+            this.DeletePositionButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // NameTextBox
@@ -46,6 +47,7 @@ namespace HCMSApplication.Forms
             this.NameTextBox.Name = "NameTextBox";
             this.NameTextBox.Size = new System.Drawing.Size(157, 22);
             this.NameTextBox.TabIndex = 3;
+            this.NameTextBox.TextChanged += new System.EventHandler(this.NameTextBox_TextChanged);
             // 
             // label1
             // 
@@ -67,6 +69,7 @@ namespace HCMSApplication.Forms
             // 
             // DepartmentIDTextBox
             // 
+            this.DepartmentIDTextBox.Enabled = false;
             this.DepartmentIDTextBox.Location = new System.Drawing.Point(124, 4);
             this.DepartmentIDTextBox.Name = "DepartmentIDTextBox";
             this.DepartmentIDTextBox.Size = new System.Drawing.Size(100, 22);
@@ -89,6 +92,7 @@ namespace HCMSApplication.Forms
             this.BackButton.TabIndex = 7;
             this.BackButton.Text = "Back";
             this.BackButton.UseVisualStyleBackColor = true;
+            this.BackButton.Click += new System.EventHandler(this.BackButton_Click);
             // 
             // EditPositionButton
             // 
@@ -98,6 +102,7 @@ namespace HCMSApplication.Forms
             this.EditPositionButton.TabIndex = 8;
             this.EditPositionButton.Text = "Edit Position";
             this.EditPositionButton.UseVisualStyleBackColor = true;
+            this.EditPositionButton.Click += new System.EventHandler(this.EditPositionButton_Click);
             // 
             // NewPositionButton
             // 
@@ -107,6 +112,7 @@ namespace HCMSApplication.Forms
             this.NewPositionButton.TabIndex = 9;
             this.NewPositionButton.Text = "New Position";
             this.NewPositionButton.UseVisualStyleBackColor = true;
+            this.NewPositionButton.Click += new System.EventHandler(this.NewPositionButton_Click);
             // 
             // SaveChangesButton
             // 
@@ -116,12 +122,25 @@ namespace HCMSApplication.Forms
             this.SaveChangesButton.TabIndex = 10;
             this.SaveChangesButton.Text = "Save Changes";
             this.SaveChangesButton.UseVisualStyleBackColor = true;
+            this.SaveChangesButton.Click += new System.EventHandler(this.SaveChangesButton_Click);
+            // 
+            // DeletePositionButton
+            // 
+            this.DeletePositionButton.Enabled = false;
+            this.DeletePositionButton.Location = new System.Drawing.Point(665, 142);
+            this.DeletePositionButton.Name = "DeletePositionButton";
+            this.DeletePositionButton.Size = new System.Drawing.Size(123, 53);
+            this.DeletePositionButton.TabIndex = 11;
+            this.DeletePositionButton.Text = "Delete Position";
+            this.DeletePositionButton.UseVisualStyleBackColor = true;
+            this.DeletePositionButton.Click += new System.EventHandler(this.DeletePositionButton_Click);
             // 
             // EditDepartment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.DeletePositionButton);
             this.Controls.Add(this.SaveChangesButton);
             this.Controls.Add(this.NewPositionButton);
             this.Controls.Add(this.EditPositionButton);
@@ -133,6 +152,7 @@ namespace HCMSApplication.Forms
             this.Controls.Add(this.label1);
             this.Name = "EditDepartment";
             this.Text = "EditDepartment";
+            this.Load += new System.EventHandler(this.EditDepartment_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -149,5 +169,6 @@ namespace HCMSApplication.Forms
         private System.Windows.Forms.Button EditPositionButton;
         private System.Windows.Forms.Button NewPositionButton;
         private System.Windows.Forms.Button SaveChangesButton;
+        private System.Windows.Forms.Button DeletePositionButton;
     }
 }

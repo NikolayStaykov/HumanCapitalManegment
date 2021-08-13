@@ -33,6 +33,34 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.5.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Pretend This Is D\SharedNhibernate\Bouncy\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Core">
+      <HintPath>..\..\..\..\..\..\..\Pretend This Is D\SharedNhibernate\Castle\lib\net35\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.DynamicProxy2">
+      <HintPath>..\..\..\..\..\..\..\Pretend This Is D\SharedNhibernate\Castle Proxy\lib\Castle.DynamicProxy2.dll</HintPath>
+    </Reference>
+    <Reference Include="Iesi.Collections">
+      <HintPath>..\..\..\..\..\..\..\Pretend This Is D\SharedNhibernate\Required_Bins\Iesi.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\..\..\..\..\..\..\Pretend This Is D\SharedNhibernate\Tests\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Lucene.Net">
+      <HintPath>..\..\..\..\..\..\..\Pretend This Is D\SharedNhibernate\Lucene\lib\NET40\Lucene.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data">
+      <HintPath>..\..\..\..\..\..\..\Pretend This Is D\SharedNhibernate\MySQL\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate">
+      <HintPath>..\..\..\..\..\..\..\Pretend This Is D\SharedNhibernate\Required_Bins\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="Rhino.Mocks">
+      <HintPath>..\..\..\..\..\..\..\Pretend This Is D\SharedNhibernate\Rhino\lib\net\Rhino.Mocks.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -46,6 +74,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\ChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ChangePassword.Designer.cs">
+      <DependentUpon>ChangePassword.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Browse Forms\BrowseUsersForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -150,6 +184,9 @@
     <Compile Include="Objects\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Objects\User.cs" />
+    <EmbeddedResource Include="Forms\ChangePassword.resx">
+      <DependentUpon>ChangePassword.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Browse Forms\BrowseUsersForm.resx">
       <DependentUpon>BrowseUsersForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -219,6 +256,20 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="UserMap.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="LeaveBalanceMap.hbm.xml" />
+    <EmbeddedResource Include="LeaveRequestsMap.hbm.xml" />
+    <EmbeddedResource Include="PositionMap.hbm.xml" />
+    <EmbeddedResource Include="DeptMap.hbm.xml" />
+    <EmbeddedResource Include="EmployeeMap.hbm.xml" />
+    <Content Include="hibernate.cfg.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

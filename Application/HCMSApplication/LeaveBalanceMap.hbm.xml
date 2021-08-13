@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="HCMSApplication"
+                   namespace="HCMSApplication.Domain">
+
+	<!-- more mapping info here -->
+	<class name="HCMSApplication.LeaveBalance, HCMSApplication" table="Leave_Balance">
+		<id name="ID" column="idLeave_Balance" type="int">
+			<generator class="NHibernate.Id.IncrementGenerator"></generator>
+		</id>
+		<property name="EmployeeID" column="Employee"
+				  type="int"></property>
+		<property name ="MaternalLeave" column="Maternal_Leave"
+				  type="int"></property>
+		<property name ="AnnualPaidLeave" column="Annual_Paid"
+				  type="int"></property>
+		<property name ="AnnualUnpaidLeave" column="Annual_Unpaid"
+				  type="int"></property>
+		<property name ="SickLeave" column="Sick_Leave"
+				  type="int"></property>
+		<property name ="HolidayLeave" column="Holiday_Leave"
+				  type="int"></property>
+	</class>
+
+</hibernate-mapping>

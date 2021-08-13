@@ -174,6 +174,7 @@ namespace HCMSApplication.Forms.Edit_Forms
             this.EndDateTime.Name = "EndDateTime";
             this.EndDateTime.Size = new System.Drawing.Size(256, 22);
             this.EndDateTime.TabIndex = 103;
+            this.EndDateTime.ValueChanged += new System.EventHandler(this.EndDateTime_ValueChanged);
             // 
             // label3
             // 
@@ -190,6 +191,7 @@ namespace HCMSApplication.Forms.Edit_Forms
             this.StartDateTime.Name = "StartDateTime";
             this.StartDateTime.Size = new System.Drawing.Size(251, 22);
             this.StartDateTime.TabIndex = 101;
+            this.StartDateTime.ValueChanged += new System.EventHandler(this.StartDateTime_ValueChanged);
             // 
             // label2
             // 
@@ -208,6 +210,7 @@ namespace HCMSApplication.Forms.Edit_Forms
             this.SaveChangesButton.TabIndex = 99;
             this.SaveChangesButton.Text = "Save Changes";
             this.SaveChangesButton.UseVisualStyleBackColor = true;
+            this.SaveChangesButton.Click += new System.EventHandler(this.SaveChangesButton_Click);
             // 
             // BackButton
             // 
@@ -217,11 +220,13 @@ namespace HCMSApplication.Forms.Edit_Forms
             this.BackButton.TabIndex = 98;
             this.BackButton.Text = "Back";
             this.BackButton.UseVisualStyleBackColor = true;
+            this.BackButton.Click += new System.EventHandler(this.BackButton_Click);
             // 
             // EmployeeIDTextBox
             // 
             this.EmployeeIDTextBox.Location = new System.Drawing.Point(109, 27);
             this.EmployeeIDTextBox.Name = "EmployeeIDTextBox";
+            this.EmployeeIDTextBox.ReadOnly = true;
             this.EmployeeIDTextBox.Size = new System.Drawing.Size(206, 22);
             this.EmployeeIDTextBox.TabIndex = 97;
             // 
@@ -244,6 +249,7 @@ namespace HCMSApplication.Forms.Edit_Forms
             // 
             // TypeComboBox
             // 
+            this.TypeComboBox.Enabled = false;
             this.TypeComboBox.FormattingEnabled = true;
             this.TypeComboBox.Items.AddRange(new object[] {
             "",
@@ -256,26 +262,29 @@ namespace HCMSApplication.Forms.Edit_Forms
             this.TypeComboBox.Name = "TypeComboBox";
             this.TypeComboBox.Size = new System.Drawing.Size(206, 24);
             this.TypeComboBox.TabIndex = 107;
+            this.TypeComboBox.SelectedIndexChanged += new System.EventHandler(this.TypeComboBox_SelectedIndexChanged);
             // 
             // ApprooveLeave
             // 
+            this.ApprooveLeave.Enabled = false;
             this.ApprooveLeave.Location = new System.Drawing.Point(677, 207);
             this.ApprooveLeave.Name = "ApprooveLeave";
             this.ApprooveLeave.Size = new System.Drawing.Size(111, 62);
             this.ApprooveLeave.TabIndex = 120;
             this.ApprooveLeave.Text = "Approove Leave";
             this.ApprooveLeave.UseVisualStyleBackColor = true;
-            this.ApprooveLeave.Visible = false;
+            this.ApprooveLeave.Click += new System.EventHandler(this.ApprooveLeave_Click);
             // 
             // DenyLeave
             // 
+            this.DenyLeave.Enabled = false;
             this.DenyLeave.Location = new System.Drawing.Point(677, 139);
             this.DenyLeave.Name = "DenyLeave";
             this.DenyLeave.Size = new System.Drawing.Size(111, 62);
             this.DenyLeave.TabIndex = 121;
             this.DenyLeave.Text = "Deny Leave";
             this.DenyLeave.UseVisualStyleBackColor = true;
-            this.DenyLeave.Visible = false;
+            this.DenyLeave.Click += new System.EventHandler(this.DenyLeave_Click);
             // 
             // EditLeaveRequest
             // 
@@ -309,6 +318,7 @@ namespace HCMSApplication.Forms.Edit_Forms
             this.Controls.Add(this.label1);
             this.Name = "EditLeaveRequest";
             this.Text = "EditLeaveRequest";
+            this.Load += new System.EventHandler(this.EditLeaveRequest_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -30,7 +30,7 @@ namespace HCMSApplication.Forms
         private void InitializeComponent()
         {
             System.Windows.Forms.Button BackButton;
-            System.Windows.Forms.ComboBox DepartmentComboBox;
+            this.DepartmentComboBox = new System.Windows.Forms.ComboBox();
             this.SalaryTextBox = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -60,8 +60,9 @@ namespace HCMSApplication.Forms
             this.MaternalLeaveTextBox = new System.Windows.Forms.TextBox();
             this.HolidayLeaveTextBox = new System.Windows.Forms.TextBox();
             this.NewLeaveRequest = new System.Windows.Forms.Button();
+            this.EmploymentStatusComboBox = new System.Windows.Forms.ComboBox();
+            this.label15 = new System.Windows.Forms.Label();
             BackButton = new System.Windows.Forms.Button();
-            DepartmentComboBox = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // BackButton
@@ -73,14 +74,16 @@ namespace HCMSApplication.Forms
             BackButton.Text = "Back";
             BackButton.UseMnemonic = false;
             BackButton.UseVisualStyleBackColor = true;
+            BackButton.Click += new System.EventHandler(this.BackButton_Click);
             // 
             // DepartmentComboBox
             // 
-            DepartmentComboBox.FormattingEnabled = true;
-            DepartmentComboBox.Location = new System.Drawing.Point(448, 49);
-            DepartmentComboBox.Name = "DepartmentComboBox";
-            DepartmentComboBox.Size = new System.Drawing.Size(201, 24);
-            DepartmentComboBox.TabIndex = 34;
+            this.DepartmentComboBox.FormattingEnabled = true;
+            this.DepartmentComboBox.Location = new System.Drawing.Point(448, 49);
+            this.DepartmentComboBox.Name = "DepartmentComboBox";
+            this.DepartmentComboBox.Size = new System.Drawing.Size(201, 24);
+            this.DepartmentComboBox.TabIndex = 34;
+            this.DepartmentComboBox.SelectedIndexChanged += new System.EventHandler(this.DepartmentComboBox_SelectedIndexChanged);
             // 
             // SalaryTextBox
             // 
@@ -88,6 +91,7 @@ namespace HCMSApplication.Forms
             this.SalaryTextBox.Name = "SalaryTextBox";
             this.SalaryTextBox.Size = new System.Drawing.Size(231, 22);
             this.SalaryTextBox.TabIndex = 37;
+            this.SalaryTextBox.TextChanged += new System.EventHandler(this.SalaryTextBox_TextChanged);
             // 
             // label8
             // 
@@ -114,6 +118,7 @@ namespace HCMSApplication.Forms
             this.PositionComboBox.Name = "PositionComboBox";
             this.PositionComboBox.Size = new System.Drawing.Size(225, 24);
             this.PositionComboBox.TabIndex = 33;
+            this.PositionComboBox.SelectedIndexChanged += new System.EventHandler(this.PositionComboBox_SelectedIndexChanged);
             // 
             // label6
             // 
@@ -130,6 +135,7 @@ namespace HCMSApplication.Forms
             this.AddressTextBox.Name = "AddressTextBox";
             this.AddressTextBox.Size = new System.Drawing.Size(165, 22);
             this.AddressTextBox.TabIndex = 31;
+            this.AddressTextBox.TextChanged += new System.EventHandler(this.AddressTextBox_TextChanged);
             // 
             // label5
             // 
@@ -146,6 +152,7 @@ namespace HCMSApplication.Forms
             this.PhoneTextBox.Name = "PhoneTextBox";
             this.PhoneTextBox.Size = new System.Drawing.Size(180, 22);
             this.PhoneTextBox.TabIndex = 29;
+            this.PhoneTextBox.TextChanged += new System.EventHandler(this.PhoneTextBox_TextChanged);
             // 
             // label4
             // 
@@ -179,6 +186,7 @@ namespace HCMSApplication.Forms
             this.EmailTextBox.Name = "EmailTextBox";
             this.EmailTextBox.Size = new System.Drawing.Size(180, 22);
             this.EmailTextBox.TabIndex = 25;
+            this.EmailTextBox.TextChanged += new System.EventHandler(this.EmailTextBox_TextChanged);
             // 
             // label2
             // 
@@ -204,6 +212,7 @@ namespace HCMSApplication.Forms
             this.NameTextBox.Name = "NameTextBox";
             this.NameTextBox.Size = new System.Drawing.Size(180, 22);
             this.NameTextBox.TabIndex = 22;
+            this.NameTextBox.TextChanged += new System.EventHandler(this.NameTextBox_TextChanged);
             // 
             // SaveChangesButton
             // 
@@ -213,6 +222,7 @@ namespace HCMSApplication.Forms
             this.SaveChangesButton.TabIndex = 42;
             this.SaveChangesButton.Text = "Save Changes";
             this.SaveChangesButton.UseVisualStyleBackColor = true;
+            this.SaveChangesButton.Click += new System.EventHandler(this.SaveChangesButton_Click);
             // 
             // label9
             // 
@@ -229,6 +239,7 @@ namespace HCMSApplication.Forms
             this.EmergencyContactTextBox.Name = "EmergencyContactTextBox";
             this.EmergencyContactTextBox.Size = new System.Drawing.Size(148, 22);
             this.EmergencyContactTextBox.TabIndex = 44;
+            this.EmergencyContactTextBox.TextChanged += new System.EventHandler(this.EmergencyContactTextBox_TextChanged);
             // 
             // label10
             // 
@@ -282,6 +293,7 @@ namespace HCMSApplication.Forms
             this.PaidLeaveTextBox.ReadOnly = true;
             this.PaidLeaveTextBox.Size = new System.Drawing.Size(168, 22);
             this.PaidLeaveTextBox.TabIndex = 50;
+            this.PaidLeaveTextBox.TextChanged += new System.EventHandler(this.PaidLeaveTextBox_TextChanged);
             // 
             // UnpaidLeaveTextBox
             // 
@@ -290,6 +302,7 @@ namespace HCMSApplication.Forms
             this.UnpaidLeaveTextBox.ReadOnly = true;
             this.UnpaidLeaveTextBox.Size = new System.Drawing.Size(152, 22);
             this.UnpaidLeaveTextBox.TabIndex = 51;
+            this.UnpaidLeaveTextBox.TextChanged += new System.EventHandler(this.UnpaidLeaveTextBox_TextChanged);
             // 
             // SickLeaveTextBox
             // 
@@ -298,6 +311,7 @@ namespace HCMSApplication.Forms
             this.SickLeaveTextBox.ReadOnly = true;
             this.SickLeaveTextBox.Size = new System.Drawing.Size(171, 22);
             this.SickLeaveTextBox.TabIndex = 52;
+            this.SickLeaveTextBox.TextChanged += new System.EventHandler(this.SickLeaveTextBox_TextChanged);
             // 
             // MaternalLeaveTextBox
             // 
@@ -306,6 +320,7 @@ namespace HCMSApplication.Forms
             this.MaternalLeaveTextBox.ReadOnly = true;
             this.MaternalLeaveTextBox.Size = new System.Drawing.Size(188, 22);
             this.MaternalLeaveTextBox.TabIndex = 53;
+            this.MaternalLeaveTextBox.TextChanged += new System.EventHandler(this.MaternalLeaveTextBox_TextChanged);
             // 
             // HolidayLeaveTextBox
             // 
@@ -314,6 +329,7 @@ namespace HCMSApplication.Forms
             this.HolidayLeaveTextBox.ReadOnly = true;
             this.HolidayLeaveTextBox.Size = new System.Drawing.Size(196, 22);
             this.HolidayLeaveTextBox.TabIndex = 54;
+            this.HolidayLeaveTextBox.TextChanged += new System.EventHandler(this.HolidayLeaveTextBox_TextChanged);
             // 
             // NewLeaveRequest
             // 
@@ -323,12 +339,35 @@ namespace HCMSApplication.Forms
             this.NewLeaveRequest.TabIndex = 55;
             this.NewLeaveRequest.Text = "New Leave Request";
             this.NewLeaveRequest.UseVisualStyleBackColor = true;
+            this.NewLeaveRequest.Click += new System.EventHandler(this.NewLeaveRequest_Click);
+            // 
+            // EmploymentStatusComboBox
+            // 
+            this.EmploymentStatusComboBox.FormattingEnabled = true;
+            this.EmploymentStatusComboBox.Items.AddRange(new object[] {
+            "Active",
+            "Terminated"});
+            this.EmploymentStatusComboBox.Location = new System.Drawing.Point(495, 185);
+            this.EmploymentStatusComboBox.Name = "EmploymentStatusComboBox";
+            this.EmploymentStatusComboBox.Size = new System.Drawing.Size(153, 24);
+            this.EmploymentStatusComboBox.TabIndex = 57;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(356, 187);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(133, 17);
+            this.label15.TabIndex = 56;
+            this.label15.Text = "Employment Status:";
             // 
             // EditEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.EmploymentStatusComboBox);
+            this.Controls.Add(this.label15);
             this.Controls.Add(this.NewLeaveRequest);
             this.Controls.Add(this.HolidayLeaveTextBox);
             this.Controls.Add(this.MaternalLeaveTextBox);
@@ -347,7 +386,7 @@ namespace HCMSApplication.Forms
             this.Controls.Add(this.SalaryTextBox);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
-            this.Controls.Add(DepartmentComboBox);
+            this.Controls.Add(this.DepartmentComboBox);
             this.Controls.Add(this.PositionComboBox);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.AddressTextBox);
@@ -362,6 +401,7 @@ namespace HCMSApplication.Forms
             this.Controls.Add(this.NameTextBox);
             this.Name = "EditEmployee";
             this.Text = "mo";
+            this.Load += new System.EventHandler(this.EditEmployee_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -398,5 +438,8 @@ namespace HCMSApplication.Forms
         private System.Windows.Forms.TextBox MaternalLeaveTextBox;
         private System.Windows.Forms.TextBox HolidayLeaveTextBox;
         private System.Windows.Forms.Button NewLeaveRequest;
+        private System.Windows.Forms.ComboBox DepartmentComboBox;
+        private System.Windows.Forms.ComboBox EmploymentStatusComboBox;
+        private System.Windows.Forms.Label label15;
     }
 }

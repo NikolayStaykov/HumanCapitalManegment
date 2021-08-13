@@ -25,9 +25,9 @@ namespace HCMSApplication
 
         private void MainMenuForm_Load(object sender, EventArgs e)
         {
-            if(this.CurrrentUser.getAdmin())
+            if(this.CurrrentUser.Admin == true)
             {
-                this.UsersButton.Visible = true;
+                this.UsersButton.Enabled = true;
             }
         }
 
@@ -57,6 +57,18 @@ namespace HCMSApplication
             BrowseUsersForm BrowseUsers = new BrowseUsersForm(this.CurrrentUser, this);
             BrowseUsers.Show();
             this.Hide();
+        }
+
+        private void ChangePasswordButton_Click(object sender, EventArgs e)
+        {
+            ChangePassword changePassword = new ChangePassword(this.CurrrentUser,this);
+            this.Hide();
+            changePassword.Show();
+        }
+
+        private void QuitButton_Click(object sender, EventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
         }
     }
 }

@@ -45,6 +45,7 @@ namespace HCMSApplication
             this.LeaveRequestsListBox = new System.Windows.Forms.ListBox();
             this.EmployeeIDTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.DeleteLeaveRequestButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // TypeComboBox
@@ -99,6 +100,7 @@ namespace HCMSApplication
             this.EndDateTime.Name = "EndDateTime";
             this.EndDateTime.Size = new System.Drawing.Size(256, 22);
             this.EndDateTime.TabIndex = 35;
+            this.EndDateTime.ValueChanged += new System.EventHandler(this.EndDateTime_ValueChanged);
             // 
             // label3
             // 
@@ -115,6 +117,7 @@ namespace HCMSApplication
             this.StartDateTime.Name = "StartDateTime";
             this.StartDateTime.Size = new System.Drawing.Size(251, 22);
             this.StartDateTime.TabIndex = 33;
+            this.StartDateTime.ValueChanged += new System.EventHandler(this.StartDateTime_ValueChanged);
             // 
             // label2
             // 
@@ -133,6 +136,7 @@ namespace HCMSApplication
             this.ClearButton.TabIndex = 31;
             this.ClearButton.Text = "Clear all ";
             this.ClearButton.UseVisualStyleBackColor = true;
+            this.ClearButton.Click += new System.EventHandler(this.ClearButton_Click);
             // 
             // EditButton
             // 
@@ -142,6 +146,7 @@ namespace HCMSApplication
             this.EditButton.TabIndex = 30;
             this.EditButton.Text = "Edit Leave Request";
             this.EditButton.UseVisualStyleBackColor = true;
+            this.EditButton.Click += new System.EventHandler(this.EditButton_Click);
             // 
             // NewLeaveRequestButton
             // 
@@ -151,6 +156,7 @@ namespace HCMSApplication
             this.NewLeaveRequestButton.TabIndex = 29;
             this.NewLeaveRequestButton.Text = "New Leave Request";
             this.NewLeaveRequestButton.UseVisualStyleBackColor = true;
+            this.NewLeaveRequestButton.Click += new System.EventHandler(this.NewLeaveRequestButton_Click);
             // 
             // SearchButton
             // 
@@ -160,6 +166,7 @@ namespace HCMSApplication
             this.SearchButton.TabIndex = 28;
             this.SearchButton.Text = "Search";
             this.SearchButton.UseVisualStyleBackColor = true;
+            this.SearchButton.Click += new System.EventHandler(this.SearchButton_Click);
             // 
             // BackButton
             // 
@@ -174,10 +181,11 @@ namespace HCMSApplication
             // LeaveRequestsListBox
             // 
             this.LeaveRequestsListBox.FormattingEnabled = true;
+            this.LeaveRequestsListBox.HorizontalScrollbar = true;
             this.LeaveRequestsListBox.ItemHeight = 16;
             this.LeaveRequestsListBox.Location = new System.Drawing.Point(15, 186);
             this.LeaveRequestsListBox.Name = "LeaveRequestsListBox";
-            this.LeaveRequestsListBox.Size = new System.Drawing.Size(559, 228);
+            this.LeaveRequestsListBox.Size = new System.Drawing.Size(656, 228);
             this.LeaveRequestsListBox.TabIndex = 26;
             // 
             // EmployeeIDTextBox
@@ -196,11 +204,23 @@ namespace HCMSApplication
             this.label1.TabIndex = 24;
             this.label1.Text = "Employee ID:";
             // 
+            // DeleteLeaveRequestButton
+            // 
+            this.DeleteLeaveRequestButton.Enabled = false;
+            this.DeleteLeaveRequestButton.Location = new System.Drawing.Point(677, 12);
+            this.DeleteLeaveRequestButton.Name = "DeleteLeaveRequestButton";
+            this.DeleteLeaveRequestButton.Size = new System.Drawing.Size(111, 62);
+            this.DeleteLeaveRequestButton.TabIndex = 40;
+            this.DeleteLeaveRequestButton.Text = "Delete Leave Request";
+            this.DeleteLeaveRequestButton.UseVisualStyleBackColor = true;
+            this.DeleteLeaveRequestButton.Click += new System.EventHandler(this.DeleteLeaveRequestButton_Click);
+            // 
             // BrowseLeaveRequestsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.DeleteLeaveRequestButton);
             this.Controls.Add(this.TypeComboBox);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.StatusComboBox);
@@ -219,6 +239,7 @@ namespace HCMSApplication
             this.Controls.Add(this.label1);
             this.Name = "BrowseLeaveRequestsForm";
             this.Text = "BrowseLeaveRequestsForm";
+            this.Load += new System.EventHandler(this.BrowseLeaveRequestsForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -242,5 +263,6 @@ namespace HCMSApplication
         private System.Windows.Forms.ListBox LeaveRequestsListBox;
         private System.Windows.Forms.TextBox EmployeeIDTextBox;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button DeleteLeaveRequestButton;
     }
 }

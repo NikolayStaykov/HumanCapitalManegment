@@ -97,6 +97,7 @@ namespace HCMSApplication.Forms
             this.BackButton.TabIndex = 6;
             this.BackButton.Text = "Back";
             this.BackButton.UseVisualStyleBackColor = true;
+            this.BackButton.Click += new System.EventHandler(this.BackButton_Click);
             // 
             // SavePositionButton
             // 
@@ -106,6 +107,7 @@ namespace HCMSApplication.Forms
             this.SavePositionButton.TabIndex = 7;
             this.SavePositionButton.Text = "Save Position";
             this.SavePositionButton.UseVisualStyleBackColor = true;
+            this.SavePositionButton.Click += new System.EventHandler(this.SavePositionButton_Click);
             // 
             // NewPosition
             // 
@@ -122,6 +124,7 @@ namespace HCMSApplication.Forms
             this.Controls.Add(this.label1);
             this.Name = "NewPosition";
             this.Text = "NewPosition";
+            this.Load += new System.EventHandler(this.NewPosition_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

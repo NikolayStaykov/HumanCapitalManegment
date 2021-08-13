@@ -59,6 +59,7 @@ namespace HCMSApplication.Forms
             this.SaveButton.TabIndex = 2;
             this.SaveButton.Text = "Save Department";
             this.SaveButton.UseVisualStyleBackColor = true;
+            this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
             // 
             // BackButton
             // 
@@ -68,6 +69,7 @@ namespace HCMSApplication.Forms
             this.BackButton.TabIndex = 3;
             this.BackButton.Text = "Back";
             this.BackButton.UseVisualStyleBackColor = true;
+            this.BackButton.Click += new System.EventHandler(this.BackButton_Click);
             // 
             // NewDepartment
             // 
@@ -80,6 +82,7 @@ namespace HCMSApplication.Forms
             this.Controls.Add(this.label1);
             this.Name = "NewDepartment";
             this.Text = "NewDepartment";
+            this.Load += new System.EventHandler(this.NewDepartment_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

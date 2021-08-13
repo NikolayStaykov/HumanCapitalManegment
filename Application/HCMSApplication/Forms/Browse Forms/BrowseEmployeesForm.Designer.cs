@@ -30,7 +30,7 @@ namespace HCMSApplication
         private void InitializeComponent()
         {
             System.Windows.Forms.Button BackButton;
-            System.Windows.Forms.ComboBox DepartmentComboBox;
+            this.DepartmentComboBox = new System.Windows.Forms.ComboBox();
             this.ClearButton = new System.Windows.Forms.Button();
             this.NewEmployeeButton = new System.Windows.Forms.Button();
             this.EditButton = new System.Windows.Forms.Button();
@@ -50,19 +50,12 @@ namespace HCMSApplication
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.NameTextBox = new System.Windows.Forms.TextBox();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.EmployeesListBox = new System.Windows.Forms.ListBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.EmploymentStatusComboBox = new System.Windows.Forms.ComboBox();
+            this.DeleteEmployeeButton = new System.Windows.Forms.Button();
             BackButton = new System.Windows.Forms.Button();
-            DepartmentComboBox = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
-            // 
-            // ClearButton
-            // 
-            this.ClearButton.Location = new System.Drawing.Point(715, 327);
-            this.ClearButton.Name = "ClearButton";
-            this.ClearButton.Size = new System.Drawing.Size(75, 53);
-            this.ClearButton.TabIndex = 43;
-            this.ClearButton.Text = "Clear all ";
-            this.ClearButton.UseVisualStyleBackColor = true;
             // 
             // BackButton
             // 
@@ -75,6 +68,25 @@ namespace HCMSApplication
             BackButton.UseVisualStyleBackColor = true;
             BackButton.Click += new System.EventHandler(this.BackButton_Click);
             // 
+            // DepartmentComboBox
+            // 
+            this.DepartmentComboBox.FormattingEnabled = true;
+            this.DepartmentComboBox.Location = new System.Drawing.Point(448, 49);
+            this.DepartmentComboBox.Name = "DepartmentComboBox";
+            this.DepartmentComboBox.Size = new System.Drawing.Size(200, 24);
+            this.DepartmentComboBox.TabIndex = 35;
+            this.DepartmentComboBox.SelectedIndexChanged += new System.EventHandler(this.DepartmentComboBox_SelectedIndexChanged);
+            // 
+            // ClearButton
+            // 
+            this.ClearButton.Location = new System.Drawing.Point(715, 327);
+            this.ClearButton.Name = "ClearButton";
+            this.ClearButton.Size = new System.Drawing.Size(75, 53);
+            this.ClearButton.TabIndex = 43;
+            this.ClearButton.Text = "Clear all ";
+            this.ClearButton.UseVisualStyleBackColor = true;
+            this.ClearButton.Click += new System.EventHandler(this.ClearButton_Click);
+            // 
             // NewEmployeeButton
             // 
             this.NewEmployeeButton.Location = new System.Drawing.Point(715, 209);
@@ -83,6 +95,7 @@ namespace HCMSApplication
             this.NewEmployeeButton.TabIndex = 41;
             this.NewEmployeeButton.Text = "New Employee";
             this.NewEmployeeButton.UseVisualStyleBackColor = true;
+            this.NewEmployeeButton.Click += new System.EventHandler(this.NewEmployeeButton_Click);
             // 
             // EditButton
             // 
@@ -92,6 +105,7 @@ namespace HCMSApplication
             this.EditButton.TabIndex = 40;
             this.EditButton.Text = "Edit Employee";
             this.EditButton.UseVisualStyleBackColor = true;
+            this.EditButton.Click += new System.EventHandler(this.EditButton_Click);
             // 
             // SearchButton
             // 
@@ -101,12 +115,13 @@ namespace HCMSApplication
             this.SearchButton.TabIndex = 39;
             this.SearchButton.Text = "Search";
             this.SearchButton.UseVisualStyleBackColor = true;
+            this.SearchButton.Click += new System.EventHandler(this.SearchButton_Click);
             // 
             // SalaryTextBox
             // 
             this.SalaryTextBox.Location = new System.Drawing.Point(418, 99);
             this.SalaryTextBox.Name = "SalaryTextBox";
-            this.SalaryTextBox.Size = new System.Drawing.Size(177, 22);
+            this.SalaryTextBox.Size = new System.Drawing.Size(230, 22);
             this.SalaryTextBox.TabIndex = 38;
             // 
             // label8
@@ -127,20 +142,12 @@ namespace HCMSApplication
             this.label7.TabIndex = 36;
             this.label7.Text = "Department:";
             // 
-            // DepartmentComboBox
-            // 
-            DepartmentComboBox.FormattingEnabled = true;
-            DepartmentComboBox.Location = new System.Drawing.Point(448, 49);
-            DepartmentComboBox.Name = "DepartmentComboBox";
-            DepartmentComboBox.Size = new System.Drawing.Size(147, 24);
-            DepartmentComboBox.TabIndex = 35;
-            // 
             // PositionComboBox
             // 
             this.PositionComboBox.FormattingEnabled = true;
             this.PositionComboBox.Location = new System.Drawing.Point(424, 10);
             this.PositionComboBox.Name = "PositionComboBox";
-            this.PositionComboBox.Size = new System.Drawing.Size(171, 24);
+            this.PositionComboBox.Size = new System.Drawing.Size(224, 24);
             this.PositionComboBox.TabIndex = 34;
             // 
             // label6
@@ -232,20 +239,55 @@ namespace HCMSApplication
             this.NameTextBox.Size = new System.Drawing.Size(180, 22);
             this.NameTextBox.TabIndex = 23;
             // 
-            // listBox1
+            // EmployeesListBox
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 16;
-            this.listBox1.Location = new System.Drawing.Point(14, 180);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(681, 260);
-            this.listBox1.TabIndex = 22;
+            this.EmployeesListBox.FormattingEnabled = true;
+            this.EmployeesListBox.HorizontalScrollbar = true;
+            this.EmployeesListBox.ItemHeight = 16;
+            this.EmployeesListBox.Location = new System.Drawing.Point(14, 180);
+            this.EmployeesListBox.Name = "EmployeesListBox";
+            this.EmployeesListBox.Size = new System.Drawing.Size(681, 260);
+            this.EmployeesListBox.TabIndex = 22;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(356, 147);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(133, 17);
+            this.label9.TabIndex = 44;
+            this.label9.Text = "Employment Status:";
+            // 
+            // EmploymentStatusComboBox
+            // 
+            this.EmploymentStatusComboBox.FormattingEnabled = true;
+            this.EmploymentStatusComboBox.Items.AddRange(new object[] {
+            "Active",
+            "Terminated"});
+            this.EmploymentStatusComboBox.Location = new System.Drawing.Point(495, 145);
+            this.EmploymentStatusComboBox.Name = "EmploymentStatusComboBox";
+            this.EmploymentStatusComboBox.Size = new System.Drawing.Size(153, 24);
+            this.EmploymentStatusComboBox.TabIndex = 45;
+            // 
+            // DeleteEmployeeButton
+            // 
+            this.DeleteEmployeeButton.Enabled = false;
+            this.DeleteEmployeeButton.Location = new System.Drawing.Point(713, 91);
+            this.DeleteEmployeeButton.Name = "DeleteEmployeeButton";
+            this.DeleteEmployeeButton.Size = new System.Drawing.Size(75, 53);
+            this.DeleteEmployeeButton.TabIndex = 46;
+            this.DeleteEmployeeButton.Text = "Delete Employee";
+            this.DeleteEmployeeButton.UseVisualStyleBackColor = true;
+            this.DeleteEmployeeButton.Click += new System.EventHandler(this.DeleteEmployeeButton_Click);
             // 
             // BrowseEmployeesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.DeleteEmployeeButton);
+            this.Controls.Add(this.EmploymentStatusComboBox);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.ClearButton);
             this.Controls.Add(BackButton);
             this.Controls.Add(this.NewEmployeeButton);
@@ -254,7 +296,7 @@ namespace HCMSApplication
             this.Controls.Add(this.SalaryTextBox);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
-            this.Controls.Add(DepartmentComboBox);
+            this.Controls.Add(this.DepartmentComboBox);
             this.Controls.Add(this.PositionComboBox);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.AddressTextBox);
@@ -267,7 +309,7 @@ namespace HCMSApplication
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.NameTextBox);
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.EmployeesListBox);
             this.Name = "BrowseEmployeesForm";
             this.Text = "BrowseEmployeesForm";
             this.Load += new System.EventHandler(this.BrowseEmployeesForm_Load);
@@ -297,6 +339,10 @@ namespace HCMSApplication
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox NameTextBox;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox EmployeesListBox;
+        private System.Windows.Forms.ComboBox DepartmentComboBox;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.ComboBox EmploymentStatusComboBox;
+        private System.Windows.Forms.Button DeleteEmployeeButton;
     }
 }

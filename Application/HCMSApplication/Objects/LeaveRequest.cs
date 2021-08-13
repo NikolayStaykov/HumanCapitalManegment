@@ -8,12 +8,12 @@ namespace HCMSApplication
 {
     public class LeaveRequest
     {
-        protected int ID;
-        protected int EmployeeID;
-        private DateTime Start;
-        private DateTime End;
-        protected string ApproovalStatus;
-        private string LeaveType;
+        public virtual int ID { set; get; }
+        public virtual int EmployeeID { set; get; }
+        public virtual DateTime Start { set; get; }
+        public virtual DateTime End { set; get; }
+        public virtual string ApproovalStatus { set; get; }
+        public virtual string LeaveType { set; get; }
         public LeaveRequest(int id,int employeeID,DateTime startDate,DateTime endDate,string approovalSatus, string leaveType)
         {
             this.ID = id;
@@ -23,37 +23,10 @@ namespace HCMSApplication
             this.ApproovalStatus = approovalSatus;
             this.LeaveType = leaveType;
         }
-        public int GetID()
+        public LeaveRequest() { }
+        public override string ToString()
         {
-            return this.ID;
-        }
-        public int GetEmployeeID()
-        {
-            return this.EmployeeID;
-        }
-        public DateTime getStart()
-        {
-            return this.Start;
-        }
-        public void setStart(DateTime startDate)
-        {
-            this.Start = startDate;
-        }
-        public DateTime getEnd()
-        {
-            return this.End;
-        }
-        public void setEnd(DateTime endDate)
-        {
-            this.End = endDate;
-        }
-        public string getLeaveType()
-        {
-            return this.LeaveType;
-        }
-        public void setLeaveType(string leaveType)
-        {
-            this.LeaveType = leaveType;
+            return "Request ID: " + this.ID.ToString() + " | Employee ID: " + this.EmployeeID.ToString() + " | Start: " + this.Start.ToShortDateString() + " | End: " + this.End.ToShortDateString() + " | Status: " + this.ApproovalStatus + " | Leave Type: " + this.LeaveType;
         }
     }
 }

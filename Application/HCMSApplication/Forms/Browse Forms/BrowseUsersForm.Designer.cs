@@ -30,17 +30,18 @@ namespace HCMSApplication
         private void InitializeComponent()
         {
             this.ClearButton = new System.Windows.Forms.Button();
-            this.NewUser = new System.Windows.Forms.Button();
+            this.NewUserButton = new System.Windows.Forms.Button();
             this.EditUser = new System.Windows.Forms.Button();
             this.AdminStatus = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.UserIDTextBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.UernameTextBox = new System.Windows.Forms.TextBox();
+            this.UserNameTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.Back = new System.Windows.Forms.Button();
             this.Users_ListBox = new System.Windows.Forms.ListBox();
             this.Search = new System.Windows.Forms.Button();
+            this.DeleteUserButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // ClearButton
@@ -51,28 +52,30 @@ namespace HCMSApplication
             this.ClearButton.TabIndex = 23;
             this.ClearButton.Text = "Clear All";
             this.ClearButton.UseVisualStyleBackColor = true;
+            this.ClearButton.Click += new System.EventHandler(this.ClearButton_Click);
             // 
-            // NewUser
+            // NewUserButton
             // 
-            this.NewUser.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.NewUser.Enabled = false;
-            this.NewUser.Location = new System.Drawing.Point(678, 242);
-            this.NewUser.Name = "NewUser";
-            this.NewUser.Size = new System.Drawing.Size(112, 45);
-            this.NewUser.TabIndex = 22;
-            this.NewUser.Text = "New User";
-            this.NewUser.UseVisualStyleBackColor = true;
+            this.NewUserButton.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.NewUserButton.Enabled = false;
+            this.NewUserButton.Location = new System.Drawing.Point(678, 242);
+            this.NewUserButton.Name = "NewUserButton";
+            this.NewUserButton.Size = new System.Drawing.Size(112, 45);
+            this.NewUserButton.TabIndex = 22;
+            this.NewUserButton.Text = "New User";
+            this.NewUserButton.UseVisualStyleBackColor = true;
+            this.NewUserButton.Click += new System.EventHandler(this.NewUser_Click);
             // 
             // EditUser
             // 
             this.EditUser.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.EditUser.Enabled = false;
             this.EditUser.Location = new System.Drawing.Point(678, 191);
             this.EditUser.Name = "EditUser";
             this.EditUser.Size = new System.Drawing.Size(112, 45);
             this.EditUser.TabIndex = 21;
             this.EditUser.Text = "Edit User";
             this.EditUser.UseVisualStyleBackColor = true;
+            this.EditUser.Click += new System.EventHandler(this.EditUser_Click);
             // 
             // AdminStatus
             // 
@@ -110,12 +113,12 @@ namespace HCMSApplication
             this.label2.TabIndex = 17;
             this.label2.Text = "User ID:";
             // 
-            // UernameTextBox
+            // UserNameTextBox
             // 
-            this.UernameTextBox.Location = new System.Drawing.Point(98, 11);
-            this.UernameTextBox.Name = "UernameTextBox";
-            this.UernameTextBox.Size = new System.Drawing.Size(100, 22);
-            this.UernameTextBox.TabIndex = 16;
+            this.UserNameTextBox.Location = new System.Drawing.Point(98, 11);
+            this.UserNameTextBox.Name = "UserNameTextBox";
+            this.UserNameTextBox.Size = new System.Drawing.Size(100, 22);
+            this.UserNameTextBox.TabIndex = 16;
             // 
             // label1
             // 
@@ -153,26 +156,40 @@ namespace HCMSApplication
             this.Search.TabIndex = 12;
             this.Search.Text = "Search";
             this.Search.UseVisualStyleBackColor = true;
+            this.Search.Click += new System.EventHandler(this.Search_Click);
+            // 
+            // DeleteUserButton
+            // 
+            this.DeleteUserButton.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.DeleteUserButton.Location = new System.Drawing.Point(678, 140);
+            this.DeleteUserButton.Name = "DeleteUserButton";
+            this.DeleteUserButton.Size = new System.Drawing.Size(112, 45);
+            this.DeleteUserButton.TabIndex = 24;
+            this.DeleteUserButton.Text = "Delete User";
+            this.DeleteUserButton.UseVisualStyleBackColor = true;
+            this.DeleteUserButton.Click += new System.EventHandler(this.DeleteUserButton_Click);
             // 
             // BrowseUsersForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.DeleteUserButton);
             this.Controls.Add(this.ClearButton);
-            this.Controls.Add(this.NewUser);
+            this.Controls.Add(this.NewUserButton);
             this.Controls.Add(this.EditUser);
             this.Controls.Add(this.AdminStatus);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.UserIDTextBox);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.UernameTextBox);
+            this.Controls.Add(this.UserNameTextBox);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Back);
             this.Controls.Add(this.Users_ListBox);
             this.Controls.Add(this.Search);
             this.Name = "BrowseUsersForm";
             this.Text = "BrowseUsersForm";
+            this.Load += new System.EventHandler(this.BrowseUsersForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -181,16 +198,17 @@ namespace HCMSApplication
         #endregion
 
         private System.Windows.Forms.Button ClearButton;
-        private System.Windows.Forms.Button NewUser;
+        private System.Windows.Forms.Button NewUserButton;
         private System.Windows.Forms.Button EditUser;
         private System.Windows.Forms.ComboBox AdminStatus;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox UserIDTextBox;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox UernameTextBox;
+        private System.Windows.Forms.TextBox UserNameTextBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button Back;
         private System.Windows.Forms.ListBox Users_ListBox;
         private System.Windows.Forms.Button Search;
+        private System.Windows.Forms.Button DeleteUserButton;
     }
 }

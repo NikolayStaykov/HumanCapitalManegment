@@ -8,40 +8,30 @@ namespace HCMSApplication
 {
     public class User
     {
-        protected int ID;
-        private string Username;
-        private string Password;
-        private bool Admin;
+        public virtual int ID { set; get; }
+        public virtual string User_Name { set; get; }
+        public virtual string Password { set; get; }
+        public virtual bool Admin { set; get; }
         public User(int id,string username,string password,bool admin)
         {
             this.ID = id;
-            this.Username = username;
+            this.User_Name = username;
             this.Password = password;
             this.Admin = admin;
         }
-        public int getID()
+        public User()
+        { }
+        public virtual void setAamin(bool admin)
         {
-            return this.ID;
+            this.Admin = admin;
         }
-        public string getUsername()
-        {
-            return this.Username;
-        }
-        public string getPassword()
-        {
-            return this.Password;
-        }
-        public void setPassword(string password)
-        {
-            this.Password = password;
-        }
-        public bool getAdmin()
+        public virtual bool getAdmin()
         {
             return this.Admin;
         }
-        public void setAdmin(bool admin)
+        public override string ToString()
         {
-            this.Admin = admin;
+            return "User ID: " + this.ID.ToString() + " | Username: " + this.User_Name + " | Admin Priviliges: " + Admin.ToString();
         }
     }
 }

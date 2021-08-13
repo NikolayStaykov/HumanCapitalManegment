@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="HCMSApplication"
+                   namespace="HCMSApplication.Domain">
+
+	<!-- more mapping info here -->
+	<class name="HCMSApplication.Employee, HCMSApplication" table="Employees">
+		<id name="ID" column="idEmployees" type="int">
+			<generator class="NHibernate.Id.IncrementGenerator"></generator>
+		</id>
+		<property name="Name" column="Employee_Name"
+				  type="String"></property>
+		<property name ="Address" column="Employee_Address"
+				  type="String"></property>
+		<property name ="Email" column="Employee_Email"
+				  type="String"></property>
+		<property name ="Phone" column="Employee_Phone"
+				  type="String"></property>
+		<property name ="EmergencyContact" column="Employee_EmergencyContact"
+				  type="String"></property>
+		<property name ="EmploymentStatus" column="Employment_Status"
+				  type="String"></property>
+		<property name ="Salary" column="Employee_Salary"
+				  type="String"></property>
+		<property name ="Position_ID" column="Employee_Position"
+				  type="int"></property>
+	</class>
+
+</hibernate-mapping>

@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="HCMSApplication"
+                   namespace="HCMSApplication.Domain">
+
+	<!-- more mapping info here -->
+	<class name="HCMSApplication.LeaveRequest, HCMSApplication" table="Leave_Requests">
+		<id name="ID" column="idLeave_Requests" type="int">
+			<generator class="NHibernate.Id.IncrementGenerator"></generator>
+		</id>
+		<property name="EmployeeID" column="Employee"
+				  type="int"></property>
+		<property name ="Start" column="Leave_Start"
+				  type="DateTime"></property>
+		<property name ="End" column="Leave_End"
+				  type="DateTime"></property>
+		<property name ="ApproovalStatus" column="Leave_Approval_Status"
+				  type="String"></property>
+		<property name ="LeaveType" column="Leave_Type"
+				  type="String"></property>
+	</class>
+
+</hibernate-mapping>

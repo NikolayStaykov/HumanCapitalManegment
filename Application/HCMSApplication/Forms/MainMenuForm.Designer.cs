@@ -33,6 +33,8 @@ namespace HCMSApplication
             this.DepartmentsButton = new System.Windows.Forms.Button();
             this.LeaveRequestsButton = new System.Windows.Forms.Button();
             this.UsersButton = new System.Windows.Forms.Button();
+            this.ChangePasswordButton = new System.Windows.Forms.Button();
+            this.QuitButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // EmployeesButton
@@ -67,20 +69,42 @@ namespace HCMSApplication
             // 
             // UsersButton
             // 
+            this.UsersButton.Enabled = false;
             this.UsersButton.Location = new System.Drawing.Point(315, 305);
             this.UsersButton.Name = "UsersButton";
             this.UsersButton.Size = new System.Drawing.Size(159, 44);
             this.UsersButton.TabIndex = 3;
             this.UsersButton.Text = "Users";
             this.UsersButton.UseVisualStyleBackColor = true;
-            this.UsersButton.Visible = false;
             this.UsersButton.Click += new System.EventHandler(this.UsersButton_Click);
+            // 
+            // ChangePasswordButton
+            // 
+            this.ChangePasswordButton.Location = new System.Drawing.Point(12, 12);
+            this.ChangePasswordButton.Name = "ChangePasswordButton";
+            this.ChangePasswordButton.Size = new System.Drawing.Size(181, 23);
+            this.ChangePasswordButton.TabIndex = 4;
+            this.ChangePasswordButton.Text = "Change Password";
+            this.ChangePasswordButton.UseVisualStyleBackColor = true;
+            this.ChangePasswordButton.Click += new System.EventHandler(this.ChangePasswordButton_Click);
+            // 
+            // QuitButton
+            // 
+            this.QuitButton.Location = new System.Drawing.Point(315, 372);
+            this.QuitButton.Name = "QuitButton";
+            this.QuitButton.Size = new System.Drawing.Size(159, 44);
+            this.QuitButton.TabIndex = 5;
+            this.QuitButton.Text = "Quit";
+            this.QuitButton.UseVisualStyleBackColor = true;
+            this.QuitButton.Click += new System.EventHandler(this.QuitButton_Click);
             // 
             // MainMenuForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.QuitButton);
+            this.Controls.Add(this.ChangePasswordButton);
             this.Controls.Add(this.UsersButton);
             this.Controls.Add(this.LeaveRequestsButton);
             this.Controls.Add(this.DepartmentsButton);
@@ -98,5 +122,7 @@ namespace HCMSApplication
         private System.Windows.Forms.Button DepartmentsButton;
         private System.Windows.Forms.Button LeaveRequestsButton;
         private System.Windows.Forms.Button UsersButton;
+        private System.Windows.Forms.Button ChangePasswordButton;
+        private System.Windows.Forms.Button QuitButton;
     }
 }

@@ -31,12 +31,13 @@ namespace HCMSApplication
         {
             this.ClearButton = new System.Windows.Forms.Button();
             this.EditButton = new System.Windows.Forms.Button();
-            this.NewDepartment = new System.Windows.Forms.Button();
+            this.NewDepartmentButton = new System.Windows.Forms.Button();
             this.SearchButton = new System.Windows.Forms.Button();
             this.BackButton = new System.Windows.Forms.Button();
             this.DepartmentsListBox = new System.Windows.Forms.ListBox();
             this.NameTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.DeleteDepartmentButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // ClearButton
@@ -47,6 +48,7 @@ namespace HCMSApplication
             this.ClearButton.TabIndex = 15;
             this.ClearButton.Text = "Clear all ";
             this.ClearButton.UseVisualStyleBackColor = true;
+            this.ClearButton.Click += new System.EventHandler(this.ClearButton_Click);
             // 
             // EditButton
             // 
@@ -56,15 +58,17 @@ namespace HCMSApplication
             this.EditButton.TabIndex = 14;
             this.EditButton.Text = "Edit Department";
             this.EditButton.UseVisualStyleBackColor = true;
+            this.EditButton.Click += new System.EventHandler(this.EditButton_Click);
             // 
-            // NewDepartment
+            // NewDepartmentButton
             // 
-            this.NewDepartment.Location = new System.Drawing.Point(677, 148);
-            this.NewDepartment.Name = "NewDepartment";
-            this.NewDepartment.Size = new System.Drawing.Size(111, 62);
-            this.NewDepartment.TabIndex = 13;
-            this.NewDepartment.Text = "New Department";
-            this.NewDepartment.UseVisualStyleBackColor = true;
+            this.NewDepartmentButton.Location = new System.Drawing.Point(677, 148);
+            this.NewDepartmentButton.Name = "NewDepartmentButton";
+            this.NewDepartmentButton.Size = new System.Drawing.Size(111, 62);
+            this.NewDepartmentButton.TabIndex = 13;
+            this.NewDepartmentButton.Text = "New Department";
+            this.NewDepartmentButton.UseVisualStyleBackColor = true;
+            this.NewDepartmentButton.Click += new System.EventHandler(this.NewDepartment_Click);
             // 
             // SearchButton
             // 
@@ -74,6 +78,7 @@ namespace HCMSApplication
             this.SearchButton.TabIndex = 12;
             this.SearchButton.Text = "Search";
             this.SearchButton.UseVisualStyleBackColor = true;
+            this.SearchButton.Click += new System.EventHandler(this.SearchButton_Click);
             // 
             // BackButton
             // 
@@ -110,14 +115,26 @@ namespace HCMSApplication
             this.label1.TabIndex = 8;
             this.label1.Text = "Name: ";
             // 
+            // DeleteDepartmentButton
+            // 
+            this.DeleteDepartmentButton.Enabled = false;
+            this.DeleteDepartmentButton.Location = new System.Drawing.Point(677, 12);
+            this.DeleteDepartmentButton.Name = "DeleteDepartmentButton";
+            this.DeleteDepartmentButton.Size = new System.Drawing.Size(111, 62);
+            this.DeleteDepartmentButton.TabIndex = 16;
+            this.DeleteDepartmentButton.Text = "Delete Department";
+            this.DeleteDepartmentButton.UseVisualStyleBackColor = true;
+            this.DeleteDepartmentButton.Click += new System.EventHandler(this.DeleteDepartmentButton_Click);
+            // 
             // BrowseDepartmentsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.DeleteDepartmentButton);
             this.Controls.Add(this.ClearButton);
             this.Controls.Add(this.EditButton);
-            this.Controls.Add(this.NewDepartment);
+            this.Controls.Add(this.NewDepartmentButton);
             this.Controls.Add(this.SearchButton);
             this.Controls.Add(this.BackButton);
             this.Controls.Add(this.DepartmentsListBox);
@@ -125,6 +142,7 @@ namespace HCMSApplication
             this.Controls.Add(this.label1);
             this.Name = "BrowseDepartmentsForm";
             this.Text = "BrowseDepartmentsForm";
+            this.Load += new System.EventHandler(this.BrowseDepartmentsForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -134,11 +152,12 @@ namespace HCMSApplication
 
         private System.Windows.Forms.Button ClearButton;
         private System.Windows.Forms.Button EditButton;
-        private System.Windows.Forms.Button NewDepartment;
+        private System.Windows.Forms.Button NewDepartmentButton;
         private System.Windows.Forms.Button SearchButton;
         private System.Windows.Forms.Button BackButton;
         private System.Windows.Forms.ListBox DepartmentsListBox;
         private System.Windows.Forms.TextBox NameTextBox;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button DeleteDepartmentButton;
     }
 }

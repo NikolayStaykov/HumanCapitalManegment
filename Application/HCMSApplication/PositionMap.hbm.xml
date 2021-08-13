@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="HCMSApplication"
+                   namespace="HCMSApplication.Domain">
+
+	<!-- more mapping info here -->
+	<class name="HCMSApplication.Position, HCMSApplication" table="Positions">
+		<id name="ID" column="idPositions" type="int">
+			<generator class="NHibernate.Id.IncrementGenerator"></generator>
+		</id>
+		<property name="Name" column="Position_Name"
+				  type="String"></property>
+		<property name ="Description" column="Position_Description"
+				  type="String"></property>
+		<property name ="DepartmentID" column="Position_Department"
+				  type="int"></property>
+	</class>
+
+</hibernate-mapping>

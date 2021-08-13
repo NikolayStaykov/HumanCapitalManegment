@@ -39,6 +39,26 @@ namespace HCMSApplication.Forms
             Back = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
+            // CreateUser
+            // 
+            CreateUser.Location = new System.Drawing.Point(15, 112);
+            CreateUser.Name = "CreateUser";
+            CreateUser.Size = new System.Drawing.Size(113, 55);
+            CreateUser.TabIndex = 16;
+            CreateUser.Text = "Create User";
+            CreateUser.UseVisualStyleBackColor = true;
+            CreateUser.Click += new System.EventHandler(this.CreateUser_Click);
+            // 
+            // Back
+            // 
+            Back.Location = new System.Drawing.Point(158, 112);
+            Back.Name = "Back";
+            Back.Size = new System.Drawing.Size(113, 55);
+            Back.TabIndex = 17;
+            Back.Text = "Back";
+            Back.UseVisualStyleBackColor = true;
+            Back.Click += new System.EventHandler(this.Back_Click);
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -75,24 +95,6 @@ namespace HCMSApplication.Forms
             this.AdminStatus.Size = new System.Drawing.Size(173, 24);
             this.AdminStatus.TabIndex = 15;
             // 
-            // CreateUser
-            // 
-            CreateUser.Location = new System.Drawing.Point(15, 112);
-            CreateUser.Name = "CreateUser";
-            CreateUser.Size = new System.Drawing.Size(113, 55);
-            CreateUser.TabIndex = 16;
-            CreateUser.Text = "Create User";
-            CreateUser.UseVisualStyleBackColor = true;
-            // 
-            // Back
-            // 
-            Back.Location = new System.Drawing.Point(158, 112);
-            Back.Name = "Back";
-            Back.Size = new System.Drawing.Size(113, 55);
-            Back.TabIndex = 17;
-            Back.Text = "Back";
-            Back.UseVisualStyleBackColor = true;
-            // 
             // NewUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -106,6 +108,7 @@ namespace HCMSApplication.Forms
             this.Controls.Add(this.label1);
             this.Name = "NewUser";
             this.Text = "NewUser";
+            this.Load += new System.EventHandler(this.NewUser_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

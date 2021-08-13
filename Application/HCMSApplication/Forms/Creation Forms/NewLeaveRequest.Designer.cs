@@ -58,7 +58,6 @@ namespace HCMSApplication.Forms.Creation_Forms
             // 
             this.TypeComboBox.FormattingEnabled = true;
             this.TypeComboBox.Items.AddRange(new object[] {
-            "",
             "Maternal Leave",
             "Sick Leave",
             "Annual Paid Leave",
@@ -127,6 +126,7 @@ namespace HCMSApplication.Forms.Creation_Forms
             this.SaveLeaveRequestButton.TabIndex = 29;
             this.SaveLeaveRequestButton.Text = "Save Leave Request";
             this.SaveLeaveRequestButton.UseVisualStyleBackColor = true;
+            this.SaveLeaveRequestButton.Click += new System.EventHandler(this.SaveLeaveRequestButton_Click);
             // 
             // BackButton
             // 
@@ -136,11 +136,13 @@ namespace HCMSApplication.Forms.Creation_Forms
             this.BackButton.TabIndex = 27;
             this.BackButton.Text = "Back";
             this.BackButton.UseVisualStyleBackColor = true;
+            this.BackButton.Click += new System.EventHandler(this.BackButton_Click);
             // 
             // EmployeeIDTextBox
             // 
             this.EmployeeIDTextBox.Location = new System.Drawing.Point(109, 36);
             this.EmployeeIDTextBox.Name = "EmployeeIDTextBox";
+            this.EmployeeIDTextBox.ReadOnly = true;
             this.EmployeeIDTextBox.Size = new System.Drawing.Size(206, 22);
             this.EmployeeIDTextBox.TabIndex = 25;
             // 
@@ -249,9 +251,9 @@ namespace HCMSApplication.Forms.Creation_Forms
             // 
             // StatusComboBox
             // 
+            this.StatusComboBox.Enabled = false;
             this.StatusComboBox.FormattingEnabled = true;
             this.StatusComboBox.Items.AddRange(new object[] {
-            "",
             "Approoved",
             "Pending",
             "Denied"});
@@ -259,7 +261,6 @@ namespace HCMSApplication.Forms.Creation_Forms
             this.StatusComboBox.Name = "StatusComboBox";
             this.StatusComboBox.Size = new System.Drawing.Size(173, 24);
             this.StatusComboBox.TabIndex = 37;
-            this.StatusComboBox.Visible = false;
             // 
             // NewLeaveRequest
             // 
