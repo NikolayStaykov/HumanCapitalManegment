@@ -76,6 +76,7 @@ namespace HCMSApplication
             this.DepartmentComboBox.SelectedIndex = -1;
             this.EmployeesListBox.Items.Clear();
             this.PositionComboBox.Items.Clear();
+            this.SearchButton_Click(sender, e);
         }
 
         private void DepartmentComboBox_SelectedIndexChanged(object sender, EventArgs e)

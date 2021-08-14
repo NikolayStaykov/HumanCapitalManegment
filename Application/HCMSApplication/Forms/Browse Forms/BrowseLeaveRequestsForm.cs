@@ -54,18 +54,7 @@ namespace HCMSApplication
             this.LeaveRequestsListBox.Items.Clear();
             ISessionFactory sessionFactory = new NHibernate.Cfg.Configuration().Configure().BuildSessionFactory();
             ISession session = sessionFactory.OpenSession();
-            using (session.BeginTransaction())
-            {
-                var requests = session
-                    .CreateCriteria(typeof(LeaveRequest))
-                    .List<LeaveRequest>();
-                this.AllRequests = requests;
-            }
-            session.Close();
-            foreach (LeaveRequest request in this.AllRequests)
-            {
-                this.LeaveRequestsListBox.Items.Add(request.ToString());
-            }
+            this.SearchButton_Click(sender, e);
         }
 
         private void BrowseLeaveRequestsForm_Load(object sender, EventArgs e)

@@ -43,6 +43,7 @@ namespace HCMSApplication
         {
             this.DepartmentsListBox.Items.Clear();
             this.NameTextBox.Text = "";
+            this.SearchButton_Click(sender, e);
         }
 
         private void SearchButton_Click(object sender, EventArgs e)

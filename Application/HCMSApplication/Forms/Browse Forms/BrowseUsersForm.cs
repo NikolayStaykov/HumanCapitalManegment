@@ -75,6 +75,7 @@ namespace HCMSApplication
             this.UserNameTextBox.Text = "";
             this.AdminStatus.SelectedIndex = -1;
             this.Users_ListBox.Items.Clear();
+            this.Search_Click(sender, e);
         }
 
         private void Search_Click(object sender, EventArgs e)

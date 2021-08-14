@@ -36,28 +36,40 @@ namespace HCMSApplication
 
         private void LogInButton_Click(object sender, EventArgs e)
         {
-            sessionFactory = new NHibernate.Cfg.Configuration().Configure().BuildSessionFactory();
-            session = sessionFactory.OpenSession();
-            using(session.BeginTransaction())
+            try
             {
-                User user = session
-                    .CreateCriteria(typeof(User))
-                    .Add(Restrictions.Eq("User_Name", UserNameTextBox.Text.Trim()))
-                    .Add(Restrictions.Eq("Password", PasswordTextBox.Text.Trim()))
-                    .UniqueResult<User>();
-                this.CurrentUser = user;
-                session.Close();
-                if (this.CurrentUser != null)
+                sessionFactory = new NHibernate.Cfg.Configuration().Configure().BuildSessionFactory();
+                session = sessionFactory.OpenSession();
+                using (session.BeginTransaction())
                 {
-                    MainMenuForm MainMenu = new MainMenuForm(this.CurrentUser);
-                    MainMenu.Show();
-                    this.Hide();
-                }
-                else
-                {
-                    MessageBox.Show("Invalid Login Credentials");
+                    User user = session
+                        .CreateCriteria(typeof(User))
+                        .Add(Restrictions.Eq("User_Name", UserNameTextBox.Text.Trim()))
+                        .Add(Restrictions.Eq("Password", PasswordTextBox.Text.Trim()))
+                        .UniqueResult<User>();
+                    this.CurrentUser = user;
+                    session.Close();
+                    if (this.CurrentUser != null)
+                    {
+                        MainMenuForm MainMenu = new MainMenuForm(this.CurrentUser);
+                        MainMenu.Show();
+                        this.Hide();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Invalid Login Credentials");
+                    }
                 }
             }
+            catch (MySql.Data.MySqlClient.MySqlException exception)
+            {
+                MessageBox.Show("Failed to connect to Database Please try again later. Error: " + exception.Message);
+            }
+        }
+
+        private void QuitButton_Click(object sender, EventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
         }
     }
 }
